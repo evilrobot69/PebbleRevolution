@@ -19,6 +19,7 @@ void settings_callback(int index, void* context) {
         settings.use_american_date_format = true;
         menu_items[index].subtitle = "No";
       }
+      break;
     }
     case 1: {
       if (settings.vibe_on_hour) {
@@ -28,6 +29,7 @@ void settings_callback(int index, void* context) {
         settings.vibe_on_hour = true;
         menu_items[index].subtitle = "No";
       }
+      break;
     }
     case 2: {
       if (settings.invert_colors) {
@@ -37,6 +39,7 @@ void settings_callback(int index, void* context) {
         settings.invert_colors = true;
         menu_items[index].subtitle = "No";
       }
+      break;
     }
     case 3: {
       if (settings.display_year) {
@@ -46,8 +49,10 @@ void settings_callback(int index, void* context) {
         settings.display_year = true;
         menu_items[index].subtitle = "Seconds";
       }
+      break;
     }
   }
+  menu_layer_reload_data((MenuLayer*)menu_layer);
 }
 
 void init_settings() {

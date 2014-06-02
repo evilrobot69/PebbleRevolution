@@ -1,7 +1,7 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
-struct {
+typedef struct {
   bool use_american_date_format;
   bool vibe_on_hour;
   bool invert_colors;

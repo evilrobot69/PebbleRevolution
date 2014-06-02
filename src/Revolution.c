@@ -174,7 +174,7 @@ BitmapLayer *load_digit_image_into_slot(Slot *slot, int digit_value, Layer *pare
 
   slot->image_layer = bitmap_layer_create(frame);
   if (settings.invert_colors)
-    bitmap_layer_set_compositing_model(
+    bitmap_layer_set_compositing_mode(
         slot->image_layer, GCompOpAssignInverted);
   bitmap_layer_set_bitmap(slot->image_layer, slot->image);
   layer_add_child(parent_layer, bitmap_layer_get_layer(slot->image_layer));
@@ -357,7 +357,7 @@ void display_day(struct tm *tick_time) {
 
   day_item.image_layer = bitmap_layer_create(day_item.image->bounds);
   if (settings.invert_colors)
-    bitmap_layer_set_compositing_model(
+    bitmap_layer_set_compositing_mode(
         day_item.image_layer, GCompOpAssignInverted);
   bitmap_layer_set_bitmap(day_item.image_layer, day_item.image);
   layer_add_child(day_item.layer, bitmap_layer_get_layer(day_item.image_layer));
