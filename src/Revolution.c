@@ -477,6 +477,7 @@ void init() {
   // Settings
   init_settings();
   window = window_create();
+  window_set_fullscreen(window, true /* Enabled */);
   window_stack_push(window, true /* Animated */);
   window_set_background_color(
       window, (settings.invert_colors? GColorWhite : GColorBlack));
@@ -532,7 +533,7 @@ void init() {
   date_layer = layer_create(date_layer_frame);
   layer_add_child(footer_layer, date_layer);
 
-  // Seconds
+  // Seconds / years
   for (int i = 0; i < NUMBER_OF_SECOND_SLOTS; i++) {
     Slot *second_slot = &second_slots[i];
     second_slot->number = i;
